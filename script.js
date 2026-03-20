@@ -2,6 +2,23 @@
 
 const form = document.querySelector(".form");
 const btnSubmit = document.querySelector(".btn-submit");
+const inputs = document.querySelectorAll("input");
+const inlineErrors = document.querySelectorAll(".inline-error");
+const message = document.querySelector("textarea");
+
+inputs.forEach((input) => {
+    input.addEventListener("click", function() {
+        inlineErrors.forEach((inlineError) => {
+            inlineError.textContent = "";
+        })
+    })
+})
+
+message.addEventListener("click", function() {
+    inlineErrors.forEach((inlineError) => {
+        inlineError.textContent = ""
+    })
+})
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
@@ -11,64 +28,72 @@ form.addEventListener('submit', function(e){
     const querySelected = document.querySelector("input[name='query-type']:checked")
     const message = document.querySelector("#message").value;
     const checkbox = document.querySelector("#checkbox");
+    const firstNameError = document.querySelector("#first-name-error")
+    const lastNameError = document.querySelector("#last-name-error");
+    const emailError = document.querySelector('#email-error');
+    const queryError = document.querySelector("#query-error");
+    const messageError = document.querySelector("#message-error");
+    const checkBoxError = document.querySelector("#checkbox-error");
     
     if(firstName.trim() === "") {
-        alert("First name is required");
+        firstNameError.textContent = "First name is required";
         return false;
     }
 
     if(/[^a-zA-Z0-9]+$/.test(firstName)) {
-        alert("Symbols are not allowed in the first name!")
+        firstNameError.textContent = "Symbols are not allowed in the first name!";
         return false;
     }
 
     if(lastName.trim() === "") {
-        alert("Last name is required");
+        lastNameError.textContent = "Last name is required";
         return false;
     }
 
     if(/[^a-zA-Z0-9-_]/.test(lastName)) {
-        alert("Symbols are not allowed in the last name!");
+        lastNameError.textContent = "Symbols are not allowed in the last name!";
         return false;
     }
+    
+    /// Replacement for above
 
-    if(!firstName.trim() === "" || lastName.trim() === "") {
-        alert("Name is required");
-        return false;
-    }
+    // if(firstName.trim() === "" || lastName.trim() === "") {
+    //     alert("Name is required");
+    //     return false;
+    // }
 
     if(emailAddress === "") {
-        alert("Email address is required");
+        emailError.textContent = "Email address is required";
         return false;
     } 
     
     if(!emailAddress.includes("@")) {
-        alert("Email does not include '@' keyword");
+        emailError.textContent = "Email does not include '@' keyword";
         return false;
     }
 
     if(!emailAddress.includes(".com")) {
-        alert("Email must include keyword after '@' e.g. '.com'");
+        emailError.textContent = "Email must include keyword after '@' e.g. '.com'";
         return false;
     }
 
     if(emailAddress.length < 11) {
-        alert("This is not a valid email addresss");
+        emailError.textContent = "This is not a valid email address";
         return false;
     }
     
     if(!querySelected) {
-        alert("A query type must be selected");
+        queryError.textContent = "A query type must be selected";
         return false;
     }
     
     if(message.trim() === "") {
-        alert("Message is required");
+        messageError.textContent = "Message is required";
         return false;
     }
     
     if(!checkbox.checked) {
-        alert("You must agree to terms before you can submit");
+        checkBoxError.textContent = "You must agree to terms before you can submit";
         return false;
     }
     
