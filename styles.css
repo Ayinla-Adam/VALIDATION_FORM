@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #9df79d1e;
+}
+
+.form-container {
+    background-color: white;
+    margin-top: 10rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 35vw;
+    height: fit-content;
+}
+
+@media(max-width: 1360px) {
+    .form-container {
+        width: 48vw;
+    }
+}
+
+@media(max-width: 960px) {
+    .form-container {
+        width: 61vw;
+    }
+}
+
+@media(max-width: 710px) {
+    .form-container {
+        width: 74vw;
+    }
+}
+
+@media(max-width: 590px) {
+    .form-container {
+        width: 87vw;
+    }
+}
+
+@media(max-width: 500px) {
+    .form-container {
+        width: 100vw;
+        justify-content: center;
+        display: block;
+    }
+
+    body {
+        display: block;
+    }
+}
+
+@media(max-width: 440px) {
+    .flex-group, .input-flex {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 360px) {
+    .checkbox-group label {
+        font-size: 1.4rem;
+    }
+}
+
+.form-container h2 {
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid RGBa(0, 0, 0, .5);
+}
+
+input:focus {
+    outline: none;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.flex-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.flex-group .form-group {
+    width: 100%;
+}
+
+label span {
+    color: green;;
+}
+
+.input-flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.input-flex > span {
+    border: 1px solid RGBa(0, 0, 0, .5);
+    padding: 1.5rem 0;
+    padding-left: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.8rem;
+}
+
+textarea {
+    line-height: 1.5;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 121.92px;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: 1px solid RGBa(0, 0, 0, .5);
+    outline: none;
+    padding: 1rem 0;
+    border-radius: 5px;
+}
