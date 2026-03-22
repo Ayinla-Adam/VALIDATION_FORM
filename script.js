@@ -3,8 +3,10 @@
 const form = document.querySelector(".form");
 const btnSubmit = document.querySelector(".btn-submit");
 const inputs = document.querySelectorAll("input");
+const successMsg = document.querySelector(".success-state")
 const inlineErrors = document.querySelectorAll(".inline-error");
 const message = document.querySelector("textarea");
+const btnReset = document.querySelector(".btn-reset");
 
 inputs.forEach((input) => {
     input.addEventListener("click", function() {
@@ -18,6 +20,12 @@ message.addEventListener("click", function() {
     inlineErrors.forEach((inlineError) => {
         inlineError.textContent = ""
     })
+})
+
+btnReset.addEventListener("click", function() {
+    successMsg.style.display = "none";
+    form.reset();
+    form.style.display = "block";
 })
 
 form.addEventListener('submit', function(e){
@@ -91,7 +99,8 @@ form.addEventListener('submit', function(e){
         checkBoxError.textContent = "You must agree to terms before you can submit";
         return false;
     }
-    
-    alert(`You have response has been successfully submitted ${lastName} ${firstName}`)
-    form.reset();
+
+    // alert(`You have response has been successfully submitted ${lastName} ${firstName}`)
+    form.style.display = "none";
+    successMsg.style.display = "block";
 })
