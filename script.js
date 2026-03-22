@@ -72,12 +72,7 @@ form.addEventListener('submit', function(e){
         return false;
     }
 
-    if(!emailAddress.includes(".com")) {
-        emailError.textContent = "Email must include keyword after '@' e.g. '.com'";
-        return false;
-    }
-
-    if(emailAddress.length < 11) {
+    if(emailAddress.length < 5) {
         emailError.textContent = "This is not a valid email address";
         return false;
     }
