@@ -1,4 +1,4 @@
-# Group 1 standalone techcrush project 
+# Group 1 standalone TECHCRUSH project 
 
  ## Simple Form Validation
 
