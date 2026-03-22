@@ -88,7 +88,7 @@ form.addEventListener('submit', function(e){
 
 const emailRegex = /^(?!.*\.\.)(?!.*@.*@)(?!.*\s)[a-zA-Z0-9](?:[a-zA-Z0-9._%+\-]{0,62}[a-zA-Z0-9])?@(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,63}$/;
 
-    if(!emailRegex.test(emailAddress) {
+    if(!emailRegex.test(emailAddress)) {
         emailError.textContent = "This is not a valid email address";
         return false;
     }
