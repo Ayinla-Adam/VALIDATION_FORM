@@ -97,6 +97,6 @@ form.addEventListener('submit', function(e){
         return false;
     }
     
-    alert(`You have successfully submitted ${lastName} ${firstName}`)
+    alert(`You have response has been successfully submitted ${lastName} ${firstName}`)
     form.reset();
 })
