@@ -1,6 +1,7 @@
 'use strict';
 
 const form = document.querySelector(".form");
+const formArea = document.querySelector("#form-area");
 const btnSubmit = document.querySelector(".btn-submit");
 const inputs = document.querySelectorAll("input");
 const successMsg = document.querySelector(".success-state")
@@ -25,7 +26,7 @@ message.addEventListener("click", function() {
 btnReset.addEventListener("click", function() {
     successMsg.style.display = "none";
     form.reset();
-    form.style.display = "block";
+    formArea.style.display = "block";
 })
 
 form.addEventListener('submit', function(e){
@@ -101,6 +102,6 @@ form.addEventListener('submit', function(e){
     }
 
     // alert(`You have response has been successfully submitted ${lastName} ${firstName}`)
-    form.style.display = "none";
+    formArea.style.display = "none";
     successMsg.style.display = "block";
 })
